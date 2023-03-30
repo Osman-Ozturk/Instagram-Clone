@@ -5,7 +5,7 @@ Backend:
 
     Mongoose
     NodeJs
-    Express
+    ExpressJS
     Socket.io
 
 Frontend:
