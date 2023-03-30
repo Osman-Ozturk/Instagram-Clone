@@ -1,0 +1,125 @@
+.profile-page {
+  margin: 88px 0;
+  .profile-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .profile-head-left {
+      display: flex;
+      justify-content: center;
+    }
+    .profile-head-right {
+      display: flex;
+      flex-direction: column;
+      .head-right-top {
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+        .profile-buttons {
+          display: flex;
+          column-gap: 10px;
+          align-items: center;
+          button:not(:first-child) {
+            background: #fafafa;
+          }
+        }
+        .profile-username {
+          font-size: 28px;
+        }
+      }
+      .head-right-center {
+        display: flex;
+        column-gap: 20px;
+        b {
+          font-weight: bolder;
+          margin-right: 4px;
+        }
+      }
+      .head-right-bottom {
+        display: flex;
+        flex-direction: column;
+        b {
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+  .profile-body {
+    border-top: 1px solid #cacaca;
+    padding-top: 10px;
+    margin-top: 20px;
+    .profile-nav-tabs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 20px;
+
+      background-color: #fafafa;
+      letter-spacing: 3px;
+    }
+    .profile-nav-tabs:active {
+      border-top: 1px solid black;
+    }
+    .profile-post-grid{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        gap: 15px;
+        .grid-post{
+                position: relative;
+                max-width: 310px ;
+                img{
+                        height: 300px;
+                }
+                .like-icon-wrapper{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        display: flex;
+                        align-items: center;
+                        column-gap: 5px;
+                        opacity: 0;
+                        transition: opacity 0.3s ease-in-out;
+                        b{color:#fff}
+                        .like-icon{color: red;}
+
+                }
+        }
+        .grid-post:hover{
+                .like-icon-wrapper{
+                        opacity: 1;
+                }  
+        }
+    }
+  }
+}
+
+@media (max-width:576px) {
+  .profile-page .profile-head{
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    .profile-username{
+      font-size: 20px;
+    }
+  }
+  .head-right-center{
+    justify-content: center;
+  }
+  .head-right-bottom{
+    text-align: center;
+  }
+  .profile-nav-tabs{
+    justify-content: center;
+    column-gap: 10px;
+    width: 100% !important;
+    button:not(:first-child){
+      display: none;
+    }
+  }
+  .profile-post-grid {
+    grid-template-columns: auto;
+  }
+ 
+}
